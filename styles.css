@@ -1266,85 +1266,7 @@ figure {
 }
 
 .row {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    flex-wrap: wrap;
-    padding: 50px 0;
-}
-
-.faq {
-    padding: 10px;
-    text-align: center;
-    font-size: 18px;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
-
-.accordion {
-    width: 1000px;
-}
-
-.accordion li {
-    list-style: none;
-    width: 100%;
-    padding: 5px;
-}
-
-.accordion li label {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    font-size: 18px;
-    font-weight: 500;
-    background-color: rgb(25, 27, 70);
-    margin-bottom: 2px;
-    cursor: pointer;
-    position: relative;
-    color: white;
-    border-bottom: 2px solid rgb(90, 28, 235);
-}
-
-label::after {
-    content: '+';
-    font-size: 34px;
-    position: absolute;
-    right: 20px;
-    transition: transform 0.5s;
-}
-
-input[type="radio"] {
     display: none;
-}
-
-.accordion .content {
-    background-color: transparent;
-    text-align: left;
-    padding: 0 20px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s, padding 0.5s;
-    color: white;
-}
-
-.accordion input[type="radio"]:checked+label+.content {
-    max-height: 600px;
-    padding: 30px 20px;
-}
-
-.accordion input[type="radio"]:checked+label::after {
-    transform: rotate(135deg);
-}
-
-.content ul li {
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-.footer-col {
-    width: 40%;
-    padding: 0 .75rem;
 }
 
 .footer-col h4 {
@@ -1401,6 +1323,57 @@ input[type="radio"] {
     margin: 5px 0;
 }
 
+.links {
+    display: flex;
+    flex-direction: row;
+    gap: 10rem;
+}
+
+.column1,
+.column2,
+.column3,
+.column4 {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    padding: 25px;
+}
+
+.column1 h4,
+.column2 h4,
+.column3 h4,
+.column4 h4 {
+    color: white;
+    margin-bottom: 1.75rem;
+    font-size: 1.234rem;
+    font-weight: bolder;
+}
+
+.column2,
+.column4 {
+    background-color: #171942;
+}
+
+.column ul li a {
+    color: white;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.column ul li {
+    list-style-type: none;
+    margin-bottom: 0.75rem;
+}
+
+.links {
+    display: flex;
+}
+.column ul li a:hover{
+    color: red;
+}
+.column ul li a{
+    transition: color 0.5s ease-in-out;
+}
 /*------------------------------------------------------------------------------------------------------------------------------------------*/
 /*------------------------------------responsive media queries------for footer--------------------------------------------------------------*/
 @media only screen and (max-width: 768px) {
@@ -1425,15 +1398,90 @@ input[type="radio"] {
         height: auto;
     }
 
-    .accordion {
-        width: 17rem;
-        height: auto;
+    .footer-container2 {
+        display: none;
+    }
+
+    .row {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        flex-wrap: wrap;
+        padding: 50px 0;
     }
 
     .faq {
+        padding: 10px;
+        text-align: center;
+        font-size: 18px;
         justify-content: center;
         flex-direction: column;
-        height: auto;
+        align-items: center;
+    }
+
+    .accordion {
+        width: 17rem;
+    }
+
+    .accordion li {
+        list-style: none;
+        width: 100%;
+        padding: 5px;
+    }
+
+    .accordion li label {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        font-size: 18px;
+        font-weight: 500;
+        background-color: rgb(25, 27, 70);
+        margin-bottom: 2px;
+        cursor: pointer;
+        position: relative;
+        color: white;
+        border-bottom: 2px solid rgb(90, 28, 235);
+    }
+
+    label::after {
+        content: '+';
+        font-size: 34px;
+        position: absolute;
+        right: 20px;
+        transition: transform 0.5s;
+    }
+
+    input[type="radio"] {
+        display: none;
+    }
+
+    .accordion .content {
+        background-color: transparent;
+        text-align: left;
+        padding: 0 20px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 1s, padding 0.5s;
+        color: white;
+    }
+
+    .accordion input[type="radio"]:checked+label+.content {
+        max-height: 700px;
+        padding: 30px 20px;
+    }
+
+    .accordion input[type="radio"]:checked+label::after {
+        transform: rotate(135deg);
+    }
+
+    .content ul li {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .footer-col {
+        width: 40%;
+        padding: 0 .75rem;
     }
 }
 
